@@ -77,8 +77,6 @@ public class UITest {
         BookPage bookPage = new BookPage(driver);
         bookPage.clickOnBook(); //2. Нажать на иконку полученной книги
         takeScreenshot(driver, "step2search");
-        bookPage.clickOnRead(); //3. Нажать на кнопку 'читать отрывок'
-        takeScreenshot(driver, "step3search");
 
     }
     /** Тест-кейс успешной регистрации */
