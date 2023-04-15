@@ -9,7 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <testng.version>5.6.0</testng.version>
+        <testng.version>7.7.1</testng.version>
+        <allure-testing.version>2.21.0</allure-testing.version>
         <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.13.1</allure.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,12 +27,10 @@
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.5</version>
         </dependency>
-
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.7.1</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -45,11 +44,16 @@
             <artifactId>allure-testng</artifactId>
             <version>2.21.0</version>
         </dependency>
-
         <dependency>
             <groupId>ru.yandex.qatools.ashot</groupId>
             <artifactId>ashot</artifactId>
             <version>1.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>1.4.2</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

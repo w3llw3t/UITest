@@ -6,10 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
-    public LoginPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
+public class BookMainPage extends AbstractBasePage {
     @FindBy(xpath = "(//a[@class='sc-1au9i1l-18 gQNwbl cy-login-button'])[2]")
     private WebElement login;
     @FindBy(xpath = "//button[@class='ant-btn sc-1t4pdxh-0 iRSnxd cy-toggle-form-registration ant-btn-normal ant-btn-sm ant-btn-block']")
@@ -22,7 +19,12 @@ public class LoginPage {
     private WebElement finalClick;
     @FindBy(xpath = "//button[@class='ant-btn sc-1t4pdxh-0 kAlGSv cy-login-submit-button ant-btn-primary ant-btn-lg ant-btn-block']")
     private WebElement logIn;
+    @FindBy(xpath = "//input[@class='ant-input']")
+    private WebElement inputSearchBook;
 
+    public BookMainPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
     @Step("Нажать на кнопку 'Войти'")
     public void clickOnLogin() {
         login.click();
@@ -33,8 +35,8 @@ public class LoginPage {
     }
 
     @Step("Ввести в поле 'Ваша электронная почта' {email}")
-    public void setEmail(String ema) {
-        email.sendKeys(ema);
+    public void setEmail(String username) {
+        email.sendKeys(username);
     }
     @Step("Ввести в поле 'Пароль' {password}")
     public void setPassword(String pass) {
@@ -43,10 +45,14 @@ public class LoginPage {
     @Step("Нажать на кнопку 'Зарегистрироваться'")
     public void finalClickOnReg() {
         finalClick.click();
-
     }
     @Step("Нажать на кнопку Войти")
     public void clickOnLogIn() {
         logIn.click();
+    }
+    @Step("Ввести в поле поиска книги {bookName}")
+    public SearchedBookPage findBook (String bookName) {
+        inputSearchBook.sendKeys(bookName);
+        return new SearchedBookPage();
     }
 }
