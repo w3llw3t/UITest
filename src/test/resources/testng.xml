@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="C:/Users/User/IdeaProjects/UITest">
+        <classes>
+            <class name="webTests.UITestAuth">
+                <methods>
+                    <include name="authTest"/>
+                </methods>
+            </class>
+            <class name="webTests.UITestReg">
+                <methods>
+                    <include name="regTest"/>
+                </methods>
+            </class>
+            <class name="webTests.UITestSearchBook">
+                <methods>
+                    <include name="searchBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
